@@ -1,0 +1,31 @@
+[
+  {
+    "username": "abcd",
+    "email": "abcd@gmail.com",
+    "password": "abcd",
+    "timestamp": "2024-12-27T05:50:13.503Z"
+  },
+  {
+    "username": "abcd1",
+    "email": "abcd1@gmail.com",
+    "password": "abcd1",
+    "timestamp": "2024-12-27T05:50:35.736Z"
+  },
+  {
+    "username": "abcd2",
+    "email": "abcd2@gmail.com",
+    "timestamp": "2024-12-27T05:52:15.100Z"
+  },
+  {
+    "username": "abcd3",
+    "email": "abcd3@gmail.com",
+    "password": "abcd3",
+    "timestamp": "2024-12-27T05:55:21.343Z"
+  },
+  {
+    "username": "usser111",
+    "email": "usser111@gmail.com",
+    "password": "usser111",
+    "timestamp": "2024-12-27T06:38:57.418Z"
+  }
+]

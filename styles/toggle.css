@@ -1,0 +1,19 @@
+.themeToggle{
+    background-color: black;
+    width: 48px;
+    height: 25px;
+    border-radius: 25px;
+    border: 3px solid ;
+    position: relative;
+}
+.circle{
+    background-color: #ccff00;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+
+    transform: tra;
+} 

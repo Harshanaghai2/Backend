@@ -1,0 +1,324 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  background-color: #000000;
+  color: white;
+}
+.logo {
+  height: 55px;
+  margin-left: 20px;
+}
+
+body.light-theme {
+  background-color: #ffffff; 
+  color: #333
+}
+
+nav {
+  background-color: #000000;
+}
+
+.container-fluid a {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container-fluid a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #ccff00;
+  text-decoration-thickness: 3px;
+}
+
+.d-flex {
+  margin-right: 20px;
+}
+
+.dropdown-menu li a {
+  color: black;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.themeToggle {
+  background-color: white;
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  box-shadow: 0 0 05px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5),
+    0 0 10px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.circle {
+  background-color: #ccff00;
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: absolute;
+  left: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movies {
+  margin-top: 6px;
+  background-color: #000;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.carousel-caption h5 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ccff00;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 50%;
+}
+
+.featured-movies h2 {
+  font-family: "Mukta", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  max-width: 200px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #ccff00;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: white;
+}
+
+.card-footer {
+  background-color: #000;
+  color: #ccff00;
+  font-size: 0.75rem;
+}
+
+.row-cols-md-4 .col {
+  margin-bottom: 1rem;
+}
+
+/* Light Theme Styles */
+.light-theme nav {
+  background-color: #f8f9fa;
+}
+
+.light-theme .container-fluid a {
+  color: black;
+}
+
+.light-theme .container-fluid a:hover {
+  text-decoration-color: #007bff; 
+}
+
+.light-theme .themeToggle {
+  background-color: #ccc;
+}
+
+.light-theme .circle {
+  background-color: #007bff;
+}
+
+.light-theme .card {
+  background-color: #f8f9fa;
+  border-color: #ccc;
+}
+
+.light-theme .card-title {
+  color: #007bff;
+}
+
+.light-theme .card-footer {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.light-theme .carousel-caption h5 {
+  color: #007bff;
+}
+
+.light-theme .carousel-caption p {
+  color: black;
+}
+
+.light-theme .carousel-control-prev-icon,
+.light-theme .carousel-control-next-icon {
+  background-color: white;
+}
+
+.scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background-color: #ccff00;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.scrollTopBtn:hover {
+  background-color: #ffcc00;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.movie-card {
+  background-color: #444;
+  color: white;
+  width: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-details h3 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.movie-details p,
+.movie-details span {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+
+.light-theme .movie-list {
+  background-color: #fff;
+}
+
+.light-theme .movie-card {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.light-theme .movie-card h3,
+.light-theme .movie-card p,
+.light-theme .movie-card span {
+  color: #333;
+}
+
+.light-theme .movie-card img {
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.light-theme .movie-card:hover {
+  background-color: #e2e6ea;
+}
+
+body.light-theme .btn,
+body.light-theme .search-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .movie-card {
+    width: 120px;
+  }
+}
+.movies-category h2 {
+  left: 0;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 20px; 
+}
+
+
+.card {
+  max-width: 400px; 
+  margin: auto; 
+  height: 100px;
+}
+
+
+.card-body {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 14px; 
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 12px; 
+  color: #666; /* Lighter text color */
+  height: 50px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.movies-category .row {
+  justify-content: center; 
+}
+
+.row-cols-1,
+.row-cols-sm-2,
+.row-cols-md-4 {
+  display: flex;
+  justify-content: space-evenly;
+}

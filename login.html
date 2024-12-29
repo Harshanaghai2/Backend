@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flick hub </title>
+  <style>
+    * {
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;  /* Adjust based on your preference */
+    left: 20px;
+    width: fit-content;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navbar {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.head {
+    font-size: 50px;
+    margin-left: 20%;
+}
+
+.text {
+    font-size: 25px;
+    margin-left: 20%;
+}
+
+.welcome-message {
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 200px;
+}
+
+.signup-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    color: white;
+    margin-right: 320px;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.input {
+    margin-bottom: 20px;
+}
+
+.input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ccff00;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #99cc00;
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+p a {
+    color: #ccff00;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    margin-top: 80px; /* Push hero section below the navbar */
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+.movies-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-video video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+}
+
+.card-content p {
+    font-size: 16px;
+}
+
+/* GENERAL MEDIA QUERIES */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .signup-container {
+        width: 100%;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .movies-section {
+        padding: 20px;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+}
+
+  </style>
+
+
+</head>
+
+<body>
+    <div class="logo">
+        <img src="cooltext465511293116170.png" alt="">
+    </div>
+    <div class="welcome-message">
+        <p class="head">Welcome to Flickhub!</p>
+        <p class="text">Your ultimate destination for streaming the latest movies and shows. <br>
+            Sign in to continue your cinematic journey.</p>
+     
+    </div>
+
+    <div class="signup-container">
+       
+        <h3>Ready to watch? Sign in here </h3>
+        <br>
+        <form action="/login" method="post">
+            <div class="input">
+                <label for="username">Username/Email</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+        
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>
+            <a href="forgot.html">Forgot password</a>
+            <br><br>
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </p>
+        
+    </div>
+</body>
+
+</html>

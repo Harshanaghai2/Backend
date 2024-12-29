@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- LOGO = https://r73.cooltext.com/rendered/cooltext468785438788713.png -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&family=Nabla&family=Ysabeau+SC:wght@1..1000&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon-16x16.png" type="image/x-icon">
+    <title>Flickhub</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  background-color: #000000;
+  color: white;
+}
+.logo {
+  height: 55px;
+  margin-left: 20px;
+}
+
+body.light-theme {
+  background-color: #ffffff; 
+  color: #333
+}
+
+nav {
+  background-color: #000000;
+}
+
+.container-fluid a {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container-fluid a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #ccff00;
+  text-decoration-thickness: 3px;
+}
+
+.d-flex {
+  margin-right: 20px;
+}
+
+.dropdown-menu li a {
+  color: black;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.themeToggle {
+  background-color: white;
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  box-shadow: 0 0 05px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5),
+    0 0 10px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.circle {
+  background-color: #ccff00;
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: absolute;
+  left: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movies {
+  margin-top: 6px;
+  background-color: #000;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.carousel-caption h5 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ccff00;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 50%;
+}
+
+.featured-movies h2 {
+  font-family: "Mukta", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  max-width: 200px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #ccff00;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: white;
+}
+
+.card-footer {
+  background-color: #000;
+  color: #ccff00;
+  font-size: 0.75rem;
+}
+
+.row-cols-md-4 .col {
+  margin-bottom: 1rem;
+}
+
+/* Light Theme Styles */
+.light-theme nav {
+  background-color: #f8f9fa;
+}
+
+.light-theme .container-fluid a {
+  color: black;
+}
+
+.light-theme .container-fluid a:hover {
+  text-decoration-color: #007bff; 
+}
+
+.light-theme .themeToggle {
+  background-color: #ccc;
+}
+
+.light-theme .circle {
+  background-color: #007bff;
+}
+
+.light-theme .card {
+  background-color: #f8f9fa;
+  border-color: #ccc;
+}
+
+.light-theme .card-title {
+  color: #007bff;
+}
+
+.light-theme .card-footer {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.light-theme .carousel-caption h5 {
+  color: #007bff;
+}
+
+.light-theme .carousel-caption p {
+  color: black;
+}
+
+.light-theme .carousel-control-prev-icon,
+.light-theme .carousel-control-next-icon {
+  background-color: white;
+}
+
+.scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background-color: #ccff00;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.scrollTopBtn:hover {
+  background-color: #ffcc00;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.movie-card {
+  background-color: #444;
+  color: white;
+  width: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-details h3 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.movie-details p,
+.movie-details span {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+
+.light-theme .movie-list {
+  background-color: #fff;
+}
+
+.light-theme .movie-card {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.light-theme .movie-card h3,
+.light-theme .movie-card p,
+.light-theme .movie-card span {
+  color: #333;
+}
+
+.light-theme .movie-card img {
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.light-theme .movie-card:hover {
+  background-color: #e2e6ea;
+}
+
+body.light-theme .btn,
+body.light-theme .search-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .movie-card {
+    width: 120px;
+  }
+}
+.movies-category h2 {
+  left: 0;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 20px; 
+}
+
+
+.card {
+  max-width: 400px; 
+  margin: auto; 
+  height: 100px;
+}
+
+
+.card-body {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 14px; 
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 12px; 
+  color: #666; /* Lighter text color */
+  height: 50px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.movies-category .row {
+  justify-content: center; 
+}
+
+.row-cols-1,
+.row-cols-sm-2,
+.row-cols-md-4 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar sticky-top " data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="cooltext468858624197899.png" alt="">     
+
+            </a>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link user dropdown-toggle" id="genresDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Genres
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="genresDropdown">
+                    <li><a class="dropdown-item" href="#action-movies">Action</a></li>
+                    <li><a class="dropdown-item" href="#comedy-movies">Comedy</a></li>
+                    <li><a class="dropdown-item" href="#thriller-movies">Thriller</a></li>
+                    <li><a class="dropdown-item" href="#adventure-movies">Adventure</a></li>
+                    <li><a class="dropdown-item" href="#horror-movies">Horror</a></li>
+                </ul>
+            </div>
+
+            <a class="nav-link" href="#">New Releases</a>
+            <a class="nav-link" href="#">My List</a>
+            <a class="nav-link" href="#">Popular</a>
+
+           
+            <div class="dropdown">
+                <a href="#" class="nav-link user dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="#">Account Details</a></li>
+                    <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" id="search-input" aria-label="Search">
+                <button class="btn btn-outline-success" type="button" id="search-btn">Search</button>
+
+            </form>
+
+
+            <div class="themeToggle">
+                <div class="circle" id="circle"></div>
+            </div>
+        </div>
+        </div>
+    </nav>
+        <section class="movies">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" style="transition: transform 2s ease-in-out;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        
+                        <img src="https://images.unsplash.com/photo-1657558045738-21507cf53606?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100 carousel-img" alt="Movie 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Avengers: Endgame</h5>
+                            <p>The ultimate showdown as the Avengers attempt to undo the damage caused by Thanos and bring back those who were lost.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.hdwallpapers.in/thumbs/2022/tenoch_huerta_namor_letitia_wright_shuri_angela_bassett_ramonda_lake_bell_lupita_nyongo_nakia_hd_black_panther_wakanda_forever-t1.jpg" class="d-block w-100 carousel-img" alt="Black Panther">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Black Panther</h5>
+                            <p>Follow T'Challa as he rises to the throne of Wakanda, facing enemies and allies alike, while defending his kingdom and its secrets.</p>
+                        </div>
+                    </div>
+                    <!-- Third Slide: Spider-Man: No Way Home -->
+                    <div class="carousel-item">
+                        <img src="https://www.hdwallpapers.in/thumbs/2021/spiderman_black_and_red_suit_4k_hd_superheroes-t1.jpg" class="d-block w-100 carousel-img" alt="Spider-Man: No Way Home">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Spider-Man: No Way Home</h5>
+                            <p>In an effort to fix his life, Peter Parker seeks Doctor Strange’s help, only to accidentally open the multiverse, bringing in foes from different realities.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+<!-- Action Movies Section -->
+<section class="movies-category container mt-5" id="action-movies">
+  <h2 class="text mb-4" style="color: #ccff00;">Action Movies</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Action+Movie+1" class="card-img-top" alt="Action Movie 1">
+        <div class="card-body">
+          <h5 class="card-title">Mission Impossible</h5>
+          <p class="card-text">Ethan Hunt is back to save the world again. High-octane action scenes and mind-blowing stunts.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Action+Movie+2" class="card-img-top" alt="Action Movie 2">
+        <div class="card-body">
+          <h5 class="card-title">Die Hard</h5>
+          <p class="card-text">John McClane must stop a group of terrorists who have taken hostages in a skyscraper.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Action+Movie+3" class="card-img-top" alt="Action Movie 3">
+        <div class="card-body">
+          <h5 class="card-title">Mad Max: Fury Road</h5>
+          <p class="card-text">In a post-apocalyptic world, Max teams up with Furiosa to escape a tyrannical warlord.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Action+Movie+4" class="card-img-top" alt="Action Movie 4">
+        <div class="card-body">
+          <h5 class="card-title">The Dark Knight</h5>
+          <p class="card-text">Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into chaos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comedy Movies Section -->
+<section class="movies-category container mt-5" id="comedy-movies">
+  <h2 class="text  mb-4" style="color: #ccff00;">Comedy Movies</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Comedy+Movie+1" class="card-img-top" alt="Comedy Movie 1">
+        <div class="card-body">
+          <h5 class="card-title">The Hangover</h5>
+          <p class="card-text">Three friends wake up in Las Vegas with no memory of the previous night and a missing groom.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Comedy+Movie+2" class="card-img-top" alt="Comedy Movie 2">
+        <div class="card-body">
+          <h5 class="card-title">Superbad</h5>
+          <p class="card-text">Two high school friends try to enjoy their last days before graduation, leading to hilarious misadventures.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Comedy+Movie+3" class="card-img-top" alt="Comedy Movie 3">
+        <div class="card-body">
+          <h5 class="card-title">Dumb and Dumber</h5>
+          <p class="card-text">Two dim-witted friends embark on a cross-country road trip in search of a lost briefcase.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x120?text=Comedy+Movie+4" class="card-img-top" alt="Comedy Movie 4">
+        <div class="card-body">
+          <h5 class="card-title">Step Brothers</h5>
+          <p class="card-text">Two middle-aged men become stepbrothers and struggle to coexist, leading to comedic situations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="movies-category container mt-5" id="thriller-movies">
+    <h2 class="text mb-4" style="color: #ccff00;">Thriller Movies</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+1" class="card-img-top" alt="Action Movie 1">
+          <div class="card-body">
+            <h5 class="card-title">Mission Impossible</h5>
+            <p class="card-text">Ethan Hunt is back to save the world again. High-octane action scenes and mind-blowing stunts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+2" class="card-img-top" alt="Action Movie 2">
+          <div class="card-body">
+            <h5 class="card-title">Die Hard</h5>
+            <p class="card-text">John McClane must stop a group of terrorists who have taken hostages in a skyscraper.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+3" class="card-img-top" alt="Action Movie 3">
+          <div class="card-body">
+            <h5 class="card-title">Mad Max: Fury Road</h5>
+            <p class="card-text">In a post-apocalyptic world, Max teams up with Furiosa to escape a tyrannical warlord.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+4" class="card-img-top" alt="Action Movie 4">
+          <div class="card-body">
+            <h5 class="card-title">The Dark Knight</h5>
+            <p class="card-text">Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into chaos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="movies-category container mt-5" id="adventure-movies">
+    <h2 class="text mb-4" style="color: #ccff00;">Adventure Movies</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+1" class="card-img-top" alt="Action Movie 1">
+          <div class="card-body">
+            <h5 class="card-title">Mission Impossible</h5>
+            <p class="card-text">Ethan Hunt is back to save the world again. High-octane action scenes and mind-blowing stunts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+2" class="card-img-top" alt="Action Movie 2">
+          <div class="card-body">
+            <h5 class="card-title">Die Hard</h5>
+            <p class="card-text">John McClane must stop a group of terrorists who have taken hostages in a skyscraper.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+3" class="card-img-top" alt="Action Movie 3">
+          <div class="card-body">
+            <h5 class="card-title">Mad Max: Fury Road</h5>
+            <p class="card-text">In a post-apocalyptic world, Max teams up with Furiosa to escape a tyrannical warlord.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+4" class="card-img-top" alt="Action Movie 4">
+          <div class="card-body">
+            <h5 class="card-title">The Dark Knight</h5>
+            <p class="card-text">Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into chaos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="movies-category container mt-5" id="horror-movies">
+    <h2 class="text mb-4" style="color: #ccff00;">Horror Movies</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+1" class="card-img-top" alt="Action Movie 1">
+          <div class="card-body">
+            <h5 class="card-title">Mission Impossible</h5>
+            <p class="card-text">Ethan Hunt is back to save the world again. High-octane action scenes and mind-blowing stunts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+2" class="card-img-top" alt="Action Movie 2">
+          <div class="card-body">
+            <h5 class="card-title">Die Hard</h5>
+            <p class="card-text">John McClane must stop a group of terrorists who have taken hostages in a skyscraper.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+3" class="card-img-top" alt="Action Movie 3">
+          <div class="card-body">
+            <h5 class="card-title">Mad Max: Fury Road</h5>
+            <p class="card-text">In a post-apocalyptic world, Max teams up with Furiosa to escape a tyrannical warlord.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x120?text=Action+Movie+4" class="card-img-top" alt="Action Movie 4">
+          <div class="card-body">
+            <h5 class="card-title">The Dark Knight</h5>
+            <p class="card-text">Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into chaos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+<button id="scrollTopBtn" class="scrollTopBtn" onclick="scrollTotop()"><i class="fas fa-arrow-up"></i></button>
+
+     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
